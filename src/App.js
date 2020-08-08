@@ -2,6 +2,7 @@ import React from 'react';
 import logo from './logo.svg';
 import Home from './main/home'
 import Routers from './main/router'
+import {connect} from 'react-redux'
 
 import './App.css';
 import './App.scss';
@@ -9,10 +10,11 @@ import './App.scss';
 function App() {
   return (
     <div className="App">
+        <Routers/>
     <Home/>
-    <Routers/>
+  
     </div>
   );
 }
 
-export default App;
+export default connect()(App)

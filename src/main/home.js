@@ -16,7 +16,7 @@ export default function Home() {
                 Shopping {"\n"}is{"\n"} Always{"\n"} A{"\n"}Good{"\n"}Idea!!!
             </span>
             <div className="middle">
-                <div className="text">Lets Shop</div>
+                <div className="text" on>Lets Shop</div>
             </div>
         </div>
     )

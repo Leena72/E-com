@@ -6,6 +6,8 @@ import {
   Link
 } from "react-router-dom";
 
+import Home from "./home"
+
 export default function Routers() {
   return (
     <Router >
@@ -28,28 +30,17 @@ export default function Routers() {
             renders the first one that matches the current URL. */}
         <Switch>
           <Route path="/about">
-            <About />
+            <Home />
           </Route>
           <Route path="/users">
-            <Users />
+            {/* <Users /> */}
           </Route>
           <Route path="/">
             <Home />
           </Route>
         </Switch>
-      </div>
+    </div>
     </Router>
   );
 }
 
-function Home() {
-  return <h2>Home</h2>;
-}
-
-function About() {
-  return <h2>About</h2>;
-}
-
-function Users() {
-  return <h2>Users</h2>;
-}
