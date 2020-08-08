@@ -1,23 +1,36 @@
 import React from 'react'
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+} from "react-router-dom";
+import ProductList from "../component/productList"
 
 export default function Home() {
     return (
-        // <div className="home">
-        //     <img src="./shopping.jpg"></img>
-        //     <span>
-        //         Shopping {"\n"}is{"\n"} Always{"\n"} A{"\n"}Good{"\n"}Idea!!!
-        //     </span>
-        // </div>
 
         <div className="container">
 
-            <img src="./shopping.jpg" className="image" ></img>
+            <img src="./Black-Friday.jpg" className="image" ></img>
             <span>
                 Shopping {"\n"}is{"\n"} Always{"\n"} A{"\n"}Good{"\n"}Idea!!!
             </span>
-            <div className="middle">
-                <div className="text" on>Lets Shop</div>
-            </div>
+       
+            <Router >
+                <div className="middle">
+
+                    <Link to="/" className="text">Lets Shop</Link>
+                </div>
+                <div>
+                    <Switch>
+                        <Route path='../component/productList'>
+                            <ProductList />
+                        </Route>
+                    </Switch>
+                </div>
+            </Router>
         </div>
     )
 }
+
