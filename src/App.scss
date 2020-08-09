@@ -3,6 +3,12 @@
   margin: 0;
   padding:0 ;
 }
+header,footer{
+  padding: 1rem;
+  background-color: cadetblue;
+
+}
+
 
 // **********app**********
 
@@ -60,4 +66,13 @@ flex: 1 20rem;
       color: black;
     }
     }
+}
+
+// ***filter***
+
+.filter{
+  display: flex;
+  justify-content: space-around;
+  padding: 1rem;
+  background: aquamarine;
 }

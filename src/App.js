@@ -5,6 +5,7 @@ import data from './data.json'
 
 import './App.scss';
 import ProductList from './component/ProductList';
+import Filter from './component/Filter';
 
 class App extends React.Component {
 constructor(){
@@ -14,6 +15,29 @@ constructor(){
     size:"",
     sort:""
   }
+}
+
+filterProduct=(event)=>{
+console.log("filter size >>>",event.target.value)
+if(event.target.value === ""){
+  this.setState({
+    size:event.target.value,
+    product:data.products})
+}
+else{
+  this.setState({
+    size:event.target.value,
+    product:data.products.filter(
+      (product) =>product.availableSizes.indexOf(event.target.value)>=0
+      ),
+  
+  });
+
+}
+}
+
+sortProduct=(event)=>{
+  console.log("sort price >>>",event.target.value)
 }
 
   render(){
@@ -26,6 +50,12 @@ constructor(){
    <main>
      <div className="content">
        <div className="main">
+         <Filter count={this.state.product.length}
+         sort={this.state.sort}
+         size={this.state.size}
+         filterProduct={this.filterProduct}
+         sortProduct={this.sortProduct}
+         />
          <ProductList product={this.state.product}/>
        </div>
        <div className="sidebar">
