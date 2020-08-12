@@ -43,6 +43,50 @@
                 [
                     "XS","M","S","L","XL"
                 ]
+        },
+        {
+            "_id":"dress5",
+            "image":"/dress1.jpeg",
+            "title":"Dress 5",
+            "description":"about dress 5", 
+            "price":50,
+            "availableSizes":
+                [
+                "XS","L","XL","XXL"
+                ]
+        },
+        {
+            "_id":"dress6",
+            "image":"/dress2.jpeg",
+            "title":"Dress 6",
+            "description":"about dress 6", 
+            "price":60,
+            "availableSizes":
+                [
+                "XS","M","S","L","XL","XXL"
+                ]
+        },
+        {
+            "_id":"dress7",
+            "image":"/dress3.jpeg",
+            "title":"Dress 7",
+            "description":"about dress 7", 
+            "price":70,
+            "availableSizes":
+                [
+                    "XS","M","XL","XXL"
+                ]
+        },
+        {
+            "_id":"dress8",
+            "image":"/dress4.jpeg",
+            "title":"Dress 8",
+            "description":"about dress 8", 
+            "price":80,
+            "availableSizes":
+                [
+                    "XS","M","S","L","XL"
+                ]
         }
     ]
     
