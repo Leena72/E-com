@@ -12,37 +12,40 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      cartItem:[],
+      cartItem: [],
       product: data.products,
       size: "",
       sort: ""
     }
   }
 
-  addToCart = (product)=>{
-// duplicate form cartitem
-let alreadyInCart= false;
-const cartItem= this.state.cartItem.slice()
-cartItem.forEach(item => {
-  if(item._id=== product._id){
-    item.count++;
-    alreadyInCart=true
+  addToCart = (product) => {
+    // duplicate form cartitem
+    let alreadyInCart = false;
+    const cartItem = this.state.cartItem.slice()
+    cartItem.forEach(item => {
+      if (item._id === product._id) {
+        item.count++;
+        alreadyInCart = true
+      }
+    });
+    if (!alreadyInCart) {
+      cartItem.push({ ...product, count: 1 })
+    }
+
+    this.setState({
+      cartItem
+    })
   }
-});
-if(!alreadyInCart){
-  cartItem.push({...product,count:1})
-}
 
-this.setState({
-  cartItem
-})
+  removeItemfromCart = (product) => {
+    const cartItem = this.state.cartItem.slice()
+    console.log("item>>", cartItem)
+    this.setState({
+      cartItem:    cartItem.filter((x) => x._id !== product._id)
+    })
+    }
 
-// removeItemfromCart=(item)=>{
-// console.log("item>>",item)
-// }
-
-
-  }
 
   filterProduct = (event) => {
     console.log("filter size >>>", event.target.value)
@@ -81,7 +84,7 @@ this.setState({
   }
 
   render() {
-    const { product,cartItem } = this.state
+    const { product, cartItem } = this.state
     return (
       <div className="App">
         <header>
@@ -99,8 +102,8 @@ this.setState({
               <ProductList product={this.state.product} addToCart={this.addToCart} />
             </div>
             <div className="sidebar">
-            <Cart cartItem={cartItem}/>
-       </div>
+              <Cart cartItem={cartItem} removeItemfromCart={this.removeItemfromCart}/>
+            </div>
           </div>
         </main>
         <footer>

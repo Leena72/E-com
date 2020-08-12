@@ -116,8 +116,43 @@ width:30%
        color: rgb(0, 0, 0);
        outline: none;
        border-radius: 5px;
+       cursor: pointer;
+
+       
+     }
+     button:hover{
+      background-color: rgb(255, 8, 0);
+      color: rgb(255, 255, 255);
      }
     }
    }
   }
+}
+
+
+.proceedSection{
+ display: flex;
+ justify-content: space-between;
+ padding: 1rem;
+  .totalPrice{
+font-size: 18px;
+color: blue;
+font-weight: bold;
+  }
+
+  .proceedBtn{
+
+  padding: 1rem;
+  background-color: yellowgreen;
+  border: none;
+  outline: none;
+  border-radius: 5px ;
+cursor: pointer;
+
+  }
+
+  .proceedBtn:hover{
+    background-color: rgb(105, 150, 16);
+    color: rgb(255, 255, 255);
+   }
 }

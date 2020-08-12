@@ -32,6 +32,17 @@ class Cart extends Component {
                         })
                     }
                 </ul>
+                {cartItem.length !== 0 ?
+
+                    <div className="proceedSection">
+                        <div className="totalPrice">Total:
+                    {formatCurrency(cartItem.reduce((a, c) => a + c.price * c.count, 0))}
+                        </div>
+                        <button className="proceedBtn">Proceed</button>
+                    </div>
+                    :
+                    ""
+                }
             </>
         )
     }
