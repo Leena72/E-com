@@ -37,6 +37,11 @@ this.setState({
   cartItem
 })
 
+// removeItemfromCart=(item)=>{
+// console.log("item>>",item)
+// }
+
+
   }
 
   filterProduct = (event) => {
