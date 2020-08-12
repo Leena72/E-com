@@ -6,15 +6,37 @@ import data from './data.json'
 import './App.scss';
 import ProductList from './component/ProductList';
 import Filter from './component/Filter';
+import Cart from './component/Cart';
 
 class App extends React.Component {
   constructor() {
     super();
     this.state = {
+      cartItem:[],
       product: data.products,
       size: "",
       sort: ""
     }
+  }
+
+  addToCart = (product)=>{
+// duplicate form cartitem
+let alreadyInCart= false;
+const cartItem= this.state.cartItem.slice()
+cartItem.forEach(item => {
+  if(item._id=== product._id){
+    item.count++;
+    alreadyInCart=true
+  }
+});
+if(!alreadyInCart){
+  cartItem.push({...product,count:1})
+}
+
+this.setState({
+  cartItem
+})
+
   }
 
   filterProduct = (event) => {
@@ -54,7 +76,7 @@ class App extends React.Component {
   }
 
   render() {
-    const { product } = this.state
+    const { product,cartItem } = this.state
     return (
       <div className="App">
         <header>
@@ -69,10 +91,10 @@ class App extends React.Component {
                 filterProduct={this.filterProduct}
                 sortProduct={this.sortProduct}
               />
-              <ProductList product={this.state.product} />
+              <ProductList product={this.state.product} addToCart={this.addToCart} />
             </div>
             <div className="sidebar">
-              cart
+            <Cart cartItem={cartItem}/>
        </div>
           </div>
         </main>
