@@ -1,9 +1,11 @@
 import React, { Component } from 'react'
 import formatCurrency from "../util"
+import Zoom from "react-reveal/Zoom";
 
 class ProductList extends Component {
     render() {
         return (
+            <Zoom clear cascade={true}>
             <ul className="product">
                 {
                     this.props.product.map((product) => {
@@ -27,6 +29,7 @@ class ProductList extends Component {
                     })
                 }
             </ul>
+            </Zoom>
         )
     }
 }
