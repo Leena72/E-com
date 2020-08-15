@@ -12,7 +12,7 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      cartItem: [],
+      cartItem: localStorage.getItem("cartItems") ? JSON.parse(localStorage.getItem("cartItems")) : [],
       product: data.products,
       size: "",
       sort: ""
@@ -36,6 +36,8 @@ class App extends React.Component {
     this.setState({
       cartItem
     })
+
+    localStorage.setItem("cartItems", JSON.stringify(cartItem));
   }
 
   removeItemfromCart = (product) => {
@@ -44,6 +46,8 @@ class App extends React.Component {
     this.setState({
       cartItem:    cartItem.filter((x) => x._id !== product._id)
     })
+    localStorage.setItem("cartItems", JSON.stringify(  cartItem.filter((x) => x._id !== product._id))
+    );
     }
 
 
