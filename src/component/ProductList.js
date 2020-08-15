@@ -69,10 +69,10 @@ class ProductList extends Component {
                                     <button className="modal-btn" onClick={() => {
                                         this.props.addToCart(product)
                                         this.closeModal()
-                                    }}>Add to Cart</button>
+                                    }}>ADD TO CART</button>
 
                                 </div>
-                                <button className="close-modal" onClick={this.closeModal}> Close</button>
+                                <button className="close-modal" onClick={this.closeModal}> CLOSE</button>
 
                             </div>
                         </Zoom>
