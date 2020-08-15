@@ -19,6 +19,14 @@ class App extends React.Component {
     }
   }
 
+  createOrder =(order)=>{
+
+    debugger
+    console.log("order",order)
+    alert("need to save order for " + order.name)
+
+  }
+
   addToCart = (product) => {
     // duplicate form cartitem
     let alreadyInCart = false;
@@ -106,7 +114,7 @@ class App extends React.Component {
               <ProductList product={this.state.product} addToCart={this.addToCart} />
             </div>
             <div className="sidebar">
-              <Cart cartItem={cartItem} removeItemfromCart={this.removeItemfromCart}/>
+              <Cart cartItem={cartItem} removeItemfromCart={this.removeItemfromCart} createOrder={this.createOrder}/>
             </div>
           </div>
         </main>
